@@ -45,4 +45,27 @@ public class Triangle : IShape
             return float.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
     }
+    
+    public override bool Equals(object? obj)
+    {
+        if (obj is Triangle temp)
+            return A.Equals(temp.A) && B.Equals(temp.B) && C.Equals(temp.C);
+
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        var hash = 17;
+        hash = 486187739 * hash + A.GetHashCode();
+        hash = 486187739 * hash + B.GetHashCode();
+        hash = 486187739 * hash + C.GetHashCode();
+
+        return hash;
+    }
+
+    public override string ToString()
+    {
+        return $"A = {A}, B = {B}, C = {C}";
+    }
 }
