@@ -19,7 +19,7 @@ public class Triangle : IShape
     public float C { get; }
 
     //Прямоугольный?
-    public bool IsRight 
+    public bool IsRight
     {
         get
         {
@@ -43,6 +43,21 @@ public class Triangle : IShape
         return ab > c && ac > b && bc > a;
     }
 
+    public static bool TryCreate(float a, float b, float c, out Triangle? triangle)
+    {
+        try
+        {
+            triangle = new Triangle(a, b, c);
+        }
+        catch
+        {
+            triangle = null;
+            return false;
+        }
+
+        return true;
+    }
+
     public float? Area
     {
         get
@@ -59,7 +74,7 @@ public class Triangle : IShape
             return float.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
     }
-    
+
     public override bool Equals(object? obj)
     {
         if (obj is Triangle temp)
