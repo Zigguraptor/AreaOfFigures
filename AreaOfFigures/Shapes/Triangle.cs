@@ -29,5 +29,20 @@ public class Triangle : IShape
         return ab > c && ac > b && bc > a;
     }
 
-    public float? Area { get; }
+    public float? Area
+    {
+        get
+        {
+            var edges = new float[3];
+            edges[0] = A;
+            edges[1] = B;
+            edges[2] = C;
+            Array.Sort(edges);
+            if (edges[2].Equals(float.Sqrt(edges[0] * edges[0] + edges[1] * edges[1])))
+                return edges[0] * edges[1] / 2;
+
+            var p = (A + B + C) / 2;
+            return float.Sqrt(p * (p - A) * (p - B) * (p - C));
+        }
+    }
 }
