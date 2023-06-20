@@ -18,6 +18,20 @@ public class Triangle : IShape
     public float B { get; }
     public float C { get; }
 
+    //Прямоугольный?
+    public bool IsRight 
+    {
+        get
+        {
+            var edges = new float[3];
+            edges[0] = A;
+            edges[1] = B;
+            edges[2] = C;
+            Array.Sort(edges);
+            return edges[2].Equals(float.Sqrt(edges[0] * edges[0] + edges[1] * edges[1]));
+        }
+    }
+
     public static bool IsPossible(float a, float b, float c)
     {
         if (a <= 0f && b <= 0f && c <= 0f) return false;
