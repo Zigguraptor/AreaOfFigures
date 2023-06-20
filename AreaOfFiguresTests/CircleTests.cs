@@ -18,18 +18,13 @@ public class CircleTests
     [TestMethod]
     public void Area_NegativeRadius()
     {
-        var r = -5f;
-
-        var circle = new Circle(r);
-        Assert.IsNull(circle.Area);
+        Assert.ThrowsException<ArgumentException>(() => new Circle(-1000f));
+        Assert.ThrowsException<ArgumentException>(() => new Circle(-1.123f));
     }
 
     [TestMethod]
     public void Area_Radius0()
     {
-        var r = 0f;
-
-        var circle = new Circle(r);
-        Assert.IsNull(circle.Area);
+        Assert.ThrowsException<ArgumentException>(() => new Circle(0f));
     }
 }
