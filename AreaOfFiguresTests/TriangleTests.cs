@@ -1,4 +1,4 @@
-using AreaOfFigures.Shapes;
+using AreaOfFigures;
 
 namespace AreaOfFiguresTests;
 

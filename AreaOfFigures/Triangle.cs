@@ -1,6 +1,4 @@
-using AreaOfFigures.Interfaces;
-
-namespace AreaOfFigures.Shapes;
+namespace AreaOfFigures;
 
 public class Triangle : Shape
 {

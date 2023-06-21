@@ -1,6 +1,4 @@
-using AreaOfFigures.Shapes;
-
-namespace AreaOfFigures.Interfaces;
+namespace AreaOfFigures;
 
 public abstract class Shape
 {
