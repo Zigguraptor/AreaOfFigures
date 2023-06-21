@@ -89,6 +89,7 @@ public class Triangle : Shape
 
     public override string ToString()
     {
-        return $"A = {A}, B = {B}, C = {C}";
+        var isRight = IsRight ? "Right triangle." : "Not right triangle.";
+        return $"A = {A}, B = {B}, C = {C}. {isRight}";
     }
 }
