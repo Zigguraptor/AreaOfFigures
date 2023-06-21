@@ -2,7 +2,7 @@
 
 namespace AreaOfFigures.Shapes;
 
-public class Circle : IShape
+public class Circle : Shape
 {
     public Circle(float radius)
     {
@@ -13,5 +13,5 @@ public class Circle : IShape
     }
 
     public float Radius { get; }
-    public float? Area => Radius > 0 ? Radius * Radius * float.Pi : null;
+    public override float Area => Radius * Radius * float.Pi;
 }

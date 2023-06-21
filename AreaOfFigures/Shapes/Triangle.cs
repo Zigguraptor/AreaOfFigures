@@ -2,7 +2,7 @@ using AreaOfFigures.Interfaces;
 
 namespace AreaOfFigures.Shapes;
 
-public class Triangle : IShape
+public class Triangle : Shape
 {
     public Triangle(float a, float b, float c)
     {
@@ -58,7 +58,7 @@ public class Triangle : IShape
         return true;
     }
 
-    public float? Area
+    public override float Area
     {
         get
         {
