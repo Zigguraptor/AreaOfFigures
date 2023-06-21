@@ -28,7 +28,8 @@ public class Triangle : Shape
             edges[1] = B;
             edges[2] = C;
             Array.Sort(edges);
-            return edges[2].Equals(float.Sqrt(edges[0] * edges[0] + edges[1] * edges[1]));
+
+            return FloatCompare(edges[2] * edges[2], edges[0] * edges[0] + edges[1] * edges[1]);
         }
     }
 
@@ -71,7 +72,7 @@ public class Triangle : Shape
     public override bool Equals(object? obj)
     {
         if (obj is Triangle temp)
-            return A.Equals(temp.A) && B.Equals(temp.B) && C.Equals(temp.C);
+            return FloatCompare(A, temp.A) && FloatCompare(B, temp.B) && FloatCompare(C, temp.C);
 
         return false;
     }
