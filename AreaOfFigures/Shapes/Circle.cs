@@ -13,5 +13,13 @@ public class Circle : Shape
     }
 
     public float Radius { get; }
-    public override float Area => Radius * Radius * float.Pi;
+
+    public override float Area
+    {
+        get
+        {
+            AreaCache ??= Radius * Radius * float.Pi;
+            return (float)AreaCache;
+        }
+    }
 }
