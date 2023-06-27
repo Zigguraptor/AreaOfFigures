@@ -7,6 +7,6 @@ public abstract class Shape
 
     protected bool FloatCompare(float float1, float float2)
     {
-        return float.Abs(float.Abs(float1) - float.Abs(float2)) <= float.Epsilon;
+        return float.Abs(float1 - float2) <= float.Epsilon;
     }
 }
